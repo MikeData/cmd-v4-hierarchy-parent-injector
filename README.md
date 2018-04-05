@@ -32,17 +32,17 @@ If the script completes without errors a v4 file will be created with the same n
 The 'injectParents' function takes several keyword arguments as list below:
 
 
-`time=`   default is "time"
+`time=`   
 
-The dimension that holds the actual time value. The script will tell you if you need to change this (i.e it can't find the specified default column).
-
-
-`geography=` default is "geography_codelist"
-
-The dimension that holds the geographic codes. The script will tell you if you need to change this (i.e it can't find the specified default column).
+The dimension that holds the actual time value. The script will tell you if you need to change this (i.e it can't find the specified default column). The default is "time"
 
 
-`populatePrimeNode=` default is "False"
+`geography=`
 
-Do you want to insert a total for the very first node of the hierarchy if its the only node on its tier. Usually False as filtering to select all is arguably self defeating.
+The dimension that holds the geographic codes. The script will tell you if you need to change this (i.e it can't find the specified default column). The default is "geography_codelist".
+
+
+`populatePrimeNode=`
+
+Do you want to insert a total for the very first node of the hierarchy if its the only node on its tier. Usually False as filtering to select all is arguably self defeating. The  default is "False" 
 
