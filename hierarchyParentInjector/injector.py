@@ -1,7 +1,5 @@
 
 import pandas as pd
-from config import cfg
-
 
 # Config
 class config(object):
