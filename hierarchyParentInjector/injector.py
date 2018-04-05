@@ -1,9 +1,24 @@
-from pprint import pprint
+
 import pandas as pd
 from config import cfg
 
+
+# Config
+class config(object):
+
+    def __init__(self):
+        self.abortOnIssues = True
+
+        # Warn the user if they're living dangerously
+        if not self.abortOnIssues:
+            print(
+                "/n WARNING !!/n. Aborting on encountering an issue is turned off via config.py. This should NEVER be turned off without " +
+                + "good reason as this is your principle defence againt data pollution.")
+
+
 # Object to hold simple errors we can use later
 class simpleErrors(object):
+    cfg = config()
 
     # specified codelist does not exist. Always errors.
     def codeListName(self, codeList, dataset):
@@ -47,7 +62,7 @@ class simpleErrors(object):
 
 # #####################
 # Our principle class
-class compare(object):
+class injectParents(object):
 
     # We'll need a hierarchy dataframe, plus the codelist name and all dimension item codes
     def __init__(self, hierINfile, dataINfile, codeList, time="time", geography="geography_codelist", populatePrimeNode=False):
@@ -343,12 +358,3 @@ class compare(object):
 
 
         self.dfD.to_csv("EXPANDED_" + self.dataINname, index=False)
-
-
-
-# TESTING
-
-dataFile = "FINANCE_CimeWithHomeOffice.csv"
-hierarchyFile = "Hierarchy_CSV_Offences.csv"
-
-compare(hierarchyFile, dataFile, "crime-offence", geography="police-force-geography")
