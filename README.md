@@ -44,5 +44,5 @@ The dimension that holds the geographic codes. The script will tell you if you n
 
 `populatePrimeNode=`
 
-Do you want to insert a total for the very first node of the hierarchy if its the only node on its tier. Usually False as filtering to select all is arguably self defeating. The  default is "False" 
+Do you want to insert a total for the very first node of the hierarchy if its the only node on its tier? The default is "False".
 
